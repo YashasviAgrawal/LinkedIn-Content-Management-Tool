@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  @apply bg-neutral-50 text-neutral-900 antialiased;
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-1.5 rounded-lg border px-3 py-1.5
+           text-sm font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-primary {
+    @apply btn border-neutral-900 bg-neutral-900 text-white hover:bg-neutral-800;
+  }
+  .btn-ghost {
+    @apply btn border-neutral-200 bg-white text-neutral-700 hover:bg-neutral-100;
+  }
+  .btn-danger {
+    @apply btn border-red-200 bg-white text-red-700 hover:bg-red-50;
+  }
+  .field {
+    @apply w-full rounded-lg border border-neutral-200 bg-white px-3 py-2 text-sm
+           outline-none transition focus:border-neutral-400 focus:ring-2 focus:ring-neutral-900/5;
+  }
+  .label {
+    @apply mb-1 block text-xs font-medium uppercase tracking-wide text-neutral-500;
+  }
+  .card {
+    @apply rounded-xl border border-neutral-200 bg-white;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-xs font-medium;
+  }
+}
+
+/* The calendar's drop targets need to read as targets the moment a drag starts,
+   not only once the pointer is over one. */
+.drop-armed {
+  @apply border-dashed border-violet-300 bg-violet-50/40;
+}
+.drop-over {
+  @apply border-solid border-violet-500 bg-violet-100/70 ring-2 ring-violet-200;
+}
